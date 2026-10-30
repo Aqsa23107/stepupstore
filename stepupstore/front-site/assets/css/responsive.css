@@ -1,0 +1,153 @@
+/* ==========================================================================
+   NOVA FORM - Luxury Men's Footwear
+   Frontend Responsive Stylesheet
+   ========================================================================== */
+
+/* Large Desktops and Monitors (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Desktops and Laptops (992px to 1199px) */
+@media (max-width: 1199.98px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: 70vh;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .benefit-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .benefit-item:last-child {
+    border-bottom: none;
+  }
+  .promo-content {
+    padding: 40px 24px;
+  }
+  .cart-table th, .cart-table td {
+    padding: 12px 8px;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 767.98px) {
+  .announcement-bar {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .announcement-bar .d-md-flex {
+    display: none !important;
+  }
+  .hero-section {
+    min-height: 60vh;
+    padding: 50px 0;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .section-padding {
+    padding: 45px 0;
+  }
+
+  /* Two columns for product card grids on mobile */
+  .col-product-grid {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .product-info {
+    padding: 12px 8px;
+  }
+  .product-name {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+  .current-price {
+    font-size: 0.95rem;
+  }
+  .original-price {
+    font-size: 0.78rem;
+  }
+  .product-card .quick-view-btn {
+    font-size: 0.7rem;
+    padding: 6px 8px;
+  }
+
+  /* Product details stack */
+  .product-gallery-container {
+    margin-bottom: 24px;
+  }
+
+  /* Filters drawer / offcanvas on mobile */
+  .shop-sidebar {
+    margin-bottom: 24px;
+  }
+
+  /* Responsive Cart layout */
+  .cart-table thead {
+    display: none;
+  }
+  .cart-table tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xs);
+    padding: 12px;
+  }
+  .cart-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+    padding: 8px 0;
+  }
+  .cart-table td::before {
+    content: attr(data-label);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+/* Small Mobile Screens (Under 480px) */
+@media (max-width: 479.98px) {
+  .brand-logo {
+    font-size: 1.25rem;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .btn-nova-dark, .btn-nova-outline {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

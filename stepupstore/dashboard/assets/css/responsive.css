@@ -1,0 +1,47 @@
+/* ==========================================================================
+   NOVA FORM - Luxury Footwear Admin Dashboard
+   Responsive Stylesheet
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+  .admin-sidebar.show {
+    transform: translateX(0);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  }
+  .admin-main {
+    margin-left: 0;
+  }
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1035;
+  }
+  .sidebar-backdrop.show {
+    display: block;
+  }
+  .admin-content {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .admin-topbar {
+    padding: 0 16px;
+  }
+  .topbar-search {
+    display: none;
+  }
+  .kpi-value {
+    font-size: 1.35rem;
+  }
+  .admin-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
