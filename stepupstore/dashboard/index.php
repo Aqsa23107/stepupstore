@@ -1,130 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overview | NOVA FORM Admin Dashboard</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/dashboard.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
+<?php
+ require_once __DIR__ . "/settings/session_start.php";
+require_once __DIR__ . "/settings/auth_check.php";
+
+?>
+
+
+
+
+<?php require_once __DIR__ . "/partials/header.php" ?>
 <body>
 
   <div class="admin-wrapper">
     
-    <!-- Admin Sidebar -->
-    <aside class="admin-sidebar">
-      <div class="sidebar-brand">
-        <a href="index.html" class="sidebar-brand-title text-decoration-none">
-          NOVA FORM <span class="badge-role">ADMIN</span>
-        </a>
-      </div>
-      <ul class="sidebar-menu">
-        <li class="sidebar-heading">Operations</li>
-        
-    <li class="sidebar-item">
-      <a href="index.html" class="sidebar-link active">
-        <i class="bi bi-grid"></i>
-        <span>Overview</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="products.html" class="sidebar-link ">
-        <i class="bi bi-box-seam"></i>
-        <span>Products</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="product-add.html" class="sidebar-link ">
-        <i class="bi bi-plus-circle"></i>
-        <span>Add Product</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="categories.html" class="sidebar-link ">
-        <i class="bi bi-tags"></i>
-        <span>Categories</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="brands.html" class="sidebar-link ">
-        <i class="bi bi-award"></i>
-        <span>Brands</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="inventory.html" class="sidebar-link ">
-        <i class="bi bi-boxes"></i>
-        <span>Inventory</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="orders.html" class="sidebar-link ">
-        <i class="bi bi-cart-check"></i>
-        <span>Orders</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="customers.html" class="sidebar-link ">
-        <i class="bi bi-people"></i>
-        <span>Customers</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="reviews.html" class="sidebar-link ">
-        <i class="bi bi-chat-left-quote"></i>
-        <span>Reviews</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="banners.html" class="sidebar-link ">
-        <i class="bi bi-images"></i>
-        <span>Banners</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="website-content.html" class="sidebar-link ">
-        <i class="bi bi-layout-text-window-reverse"></i>
-        <span>Website Content</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="settings.html" class="sidebar-link ">
-        <i class="bi bi-gear"></i>
-        <span>Settings</span>
-      </a>
-    </li>
-  
-    <li class="sidebar-item">
-      <a href="profile.html" class="sidebar-link ">
-        <i class="bi bi-person-badge"></i>
-        <span>Profile</span>
-      </a>
-    </li>
-  
-      </ul>
-      <div class="sidebar-footer">
-        <a href="../front-site/index.html" class="btn btn-outline-light btn-sm w-100 mb-2 text-start">
-          <i class="bi bi-box-arrow-up-right me-2"></i> Visit Storefront
-        </a>
-        <a href="login.html" class="btn btn-dark btn-sm w-100 text-start text-danger">
-          <i class="bi bi-power me-2"></i> Sign Out
-        </a>
-      </div>
-    </aside>
-    
+       <?php require_once __DIR__ . "/partials/sidebar.php" ?>
 
     <div class="admin-main">
       
@@ -620,7 +508,4 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/dashboard.js"></script>
-</body>
-</html>
+<?php require_once __DIR__ . "/partials/footer.php"; ?>

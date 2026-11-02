@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Portal Login | NOVA FORM</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="assets/css/dashboard.css">
-</head>
+<?php
+require_once  __DIR__ . "/settings/session_start.php";
+$errors = $_SESSION['errors'] ?? [];
+unset($_SESSION['errors']);
+?>
+
+
+
+<?php require_once __DIR__ . "/partials/header.php"; ?>
+
+
+
 <body style="background: #0f172a;">
 
   <div class="container">
@@ -17,10 +19,21 @@
         <span class="badge bg-dark border text-white px-3 py-1">ADMINISTRATIVE CONSOLE</span>
       </div>
 
-      <form action="index.html" method="GET">
+ <?php if (!empty($errors)) { ?>
+        <div class="alert alert-danger">
+          <ul>
+            <?php foreach ($errors as $error) { ?>
+              <li><?= $error ?></li>
+            <?php } ?>
+          </ul>
+
+        </div>
+
+      <?php } ?>
+      <form action="./actions/login_action.php" method="POST">
         <div class="mb-3">
           <label class="form-label small fw-bold text-uppercase">Admin Email</label>
-          <input type="email" class="form-control" value="admin@novaformshoes.pk" required>
+          <input type="email" name="email" class="form-control" value="admin@novaformshoes.pk" required>
         </div>
 
         <div class="mb-3">
@@ -28,7 +41,7 @@
             <label class="form-label small fw-bold text-uppercase">Password</label>
             <a href="forgot-password.html" class="small text-muted">Forgot?</a>
           </div>
-          <input type="password" class="form-control" value="admin123" required>
+          <input type="password" name="password" class="form-control" value="admin123" required>
         </div>
 
         <div class="form-check mb-4">
