@@ -5,6 +5,9 @@ require_once __DIR__ . "/../settings/db.php";
 
 $errors = [];
 
+// print_r($_POST);
+// exit;
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $name               = trim($_POST['name'] ?? '');

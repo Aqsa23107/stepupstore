@@ -110,13 +110,13 @@ function initDemoModalsAndAlerts() {
   }
 
   // Generic forms
-  document.querySelectorAll('.admin-demo-form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const successNotice = this.getAttribute('data-success-msg') || 'Changes saved successfully!';
-      alert(successNotice);
-    });
-  });
+  // document.querySelectorAll('.admin-demo-form').forEach(form => {
+  //   form.addEventListener('submit', function(e) {
+  //     e.preventDefault();
+  //     const successNotice = this.getAttribute('data-success-msg') || 'Changes saved successfully!';
+  //     alert(successNotice);
+  //   });
+  // });
 }
 
 /* 5. Simple Search Filter for Tables */

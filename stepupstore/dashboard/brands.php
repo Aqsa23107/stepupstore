@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/../settings/session_start.php";
-require_once __DIR__ . "/../settings/db.php";
-require_once __DIR__ . "/../settings/auth_check.php";
+ require_once __DIR__ . "/settings/session_start.php";
+require_once __DIR__ . "/settings/db.php";
+require_once __DIR__ . "/settings/auth_check.php";
 
 
 $errors = $_SESSION['errors'] ?? [];
@@ -163,7 +163,7 @@ $brands = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="modal fade" id="addBrandModal" tabindex="-1" aria-labelledby="addBrandModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-              <form action="actions/create_brand_action.php" method="POST">
+              <form action="actions/brands_action.php" method="POST">
                 <div class="modal-header">
                   <h5 class="modal-title fs-6 fw-bold" id="addBrandModalLabel">Add Brand Label</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
