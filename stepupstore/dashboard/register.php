@@ -10,11 +10,11 @@
       <form action="./actions/register_action.php" method="POST">
         <div class="mb-3">
           <label class="form-label small fw-bold">Full Name</label>
-          <input type="text" name ="name" class="form-control" placeholder="M. Asif" required>
+          <input type="text" name ="name" class="form-control" placeholder="Your name" required>
         </div>
         <div class="mb-3">
           <label class="form-label small fw-bold">Official Email</label>
-          <input type="email" name="email" class="form-control" placeholder="staff@novaformshoes.pk" required>
+          <input type="email" name="email" class="form-control" placeholder="Your email" required>
         </div>
         <div class="mb-3">
           <label class="form-label small fw-bold">Role</label>

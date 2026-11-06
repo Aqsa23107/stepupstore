@@ -229,7 +229,7 @@ $brands = mysqli_fetch_all($brand_result, MYSQLI_ASSOC);
                           ?>
                           <img src="<?= $img_src ?>" class="rounded-1" style="width: 44px; height: 44px; object-fit: cover;" alt="<?= htmlspecialchars($product['name']) ?>" onerror="this.src='https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=200&auto=format&fit=crop';">
                           <div>
-                            <div class="fw-semibold"><a href="product-edit.html?id=<?= $product['id'] ?>" class="text-dark"><?= htmlspecialchars($product['name']) ?></a></div>
+                            <div class="fw-semibold"><a href="product-edit.php?id=<?= $product['id'] ?>" class="text-dark"><?= htmlspecialchars($product['name']) ?></a></div>
                             <small class="text-muted"><?= htmlspecialchars($product['brand_name'] ?? 'NOVA FORM') ?></small>
                           </div>
                         </div>
@@ -257,8 +257,8 @@ $brands = mysqli_fetch_all($brand_result, MYSQLI_ASSOC);
                       <td>
                         <div class="d-flex gap-1">
                           <a href="../front-site/product-details.html?id=<?= $product['id'] ?>" target="_blank" class="btn btn-sm btn-outline-secondary py-1 px-2" title="View in store"><i class="bi bi-eye"></i></a>
-                          <a href="product-edit.html?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-dark py-1 px-2" title="Edit product"><i class="bi bi-pencil"></i></a>
-                          <button class="btn btn-sm btn-outline-danger py-1 px-2 btn-trigger-delete" data-name="<?= htmlspecialchars($product['name']) ?>" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" title="Delete product"><i class="bi bi-trash"></i></button>
+                          <a href="product-edit.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-outline-dark py-1 px-2" title="Edit product"><i class="bi bi-pencil"></i></a>
+                          <button class="btn btn-sm btn-outline-danger py-1 px-2 btn-trigger-delete" data-id="<?= $product['id'] ?>" data-name="<?= htmlspecialchars($product['name']) ?>" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal" title="Delete product"><i class="bi bi-trash"></i></button>
                         </div>
                       </td>
                     </tr>
@@ -304,10 +304,10 @@ $brands = mysqli_fetch_all($brand_result, MYSQLI_ASSOC);
         <div class="modal-body text-center p-4">
           <div class="text-danger fs-1 mb-2"><i class="bi bi-exclamation-circle"></i></div>
           <h5 class="fw-bold mb-2">Confirm Delete?</h5>
-          <p class="text-muted small mb-4">Are you sure you want to remove <strong id="deleteTargetName">this item</strong> from the database? This action is simulated for the prototype.</p>
+          <p class="text-muted small mb-4">Are you sure you want to remove <strong id="deleteTargetName">this item</strong> from the database? This cannot be undone.</p>
           <div class="d-flex justify-content-center gap-2">
             <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-sm btn-danger px-3" id="btnConfirmDelete">Delete</button>
+            <a href="#" class="btn btn-sm btn-danger px-3" id="btnConfirmProductDelete">Delete</a>
           </div>
         </div>
       </div>
@@ -316,6 +316,20 @@ $brands = mysqli_fetch_all($brand_result, MYSQLI_ASSOC);
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/dashboard.js"></script>
+  <script>
+    document.querySelectorAll('.btn-trigger-delete').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const name = this.getAttribute('data-name');
+        const targetName = document.getElementById('deleteTargetName');
+        const confirmBtn = document.getElementById('btnConfirmProductDelete');
+        if (targetName) targetName.textContent = name;
+        if (confirmBtn && id) {
+          confirmBtn.href = 'actions/product_delete_action.php?id=' + id;
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -9,7 +9,6 @@ unset($_SESSION['errors']);
 <?php require_once __DIR__ . "/partials/header.php"; ?>
 
 
-
 <body style="background: #0f172a;">
 
   <div class="container">
